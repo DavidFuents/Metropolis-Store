@@ -1,0 +1,11 @@
+<h1>Welcome</h1>
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.username %></h1>
+<% end %>
+<%= link_to 'logout', admin_logout_path %>
+<h4>Edit Collection</h4>
+<% @collections.each do |collection| %>
+    <%= link_to collection.name, edit_collection_path(collection) %>
+<% end %>
+
+<%= link_to 'Create New Collection', new_collection_path %>

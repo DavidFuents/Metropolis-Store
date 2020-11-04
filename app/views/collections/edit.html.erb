@@ -1,0 +1,10 @@
+<h1>Editing <%= @collection.name %></h1>
+
+<%= form_for @collection do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit "Update Collection" %>
+<% end %>
+
+<%= button_to "Delete", collection_path(@collection), method: :delete %>
