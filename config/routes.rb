@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#delete'
   end
 
-  resources :collections
+  resources :collections do 
+    resources :categories
+  end
 end

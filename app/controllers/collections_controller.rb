@@ -6,7 +6,7 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    @collection = Collection.find_by(id: params[:id])
+    @collection = Collection.find(params[:id])
   end
 
   def new
@@ -19,17 +19,17 @@ class CollectionsController < ApplicationController
   end
 
   def edit 
-    @collection = Collection.find_by(id: params[:id])
+    @collection = Collection.find(params[:id])
   end
 
   def update
-    @collection = Collection.find_by(id: params[:id])
+    @collection = Collection.find(params[:id])
     @collection.update(collection_params)
     redirect_to admin_dashboard_path
   end
 
   def destroy
-    Collection.find_by(id: params[:id]).destroy
+    Collection.find(params[:id]).destroy
     redirect_to admin_dashboard_path
   end
 
