@@ -1,0 +1,18 @@
+<h1>Metropolis</h1>
+<h2>Shop By:</h2>
+<h4>Collection</h4>
+<ul>
+<% @collections.each do |collection| %>
+    <li><%= link_to collection.name, collection_path(collection) %></li>
+<% end %>
+</ul>
+<h4>Category</h4>
+<ul>
+<% @categories.each do |category| %>
+    <li><%= link_to category.name, category_path(category) %></li>
+<% end %>
+</ul>
+
+<h2>Newest Collection</h2>
+<%= link_to @collections.first.name, collection_path(@collections.first) %>
+

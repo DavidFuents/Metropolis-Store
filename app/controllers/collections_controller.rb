@@ -1,8 +1,7 @@
 class CollectionsController < ApplicationController
-  skip_before_action :authorize_admin, only: [:index, :show]
+  skip_before_action :authorize_admin, only: [:show]
 
   def index 
-    @collections = Collection.all
   end
 
   def show

@@ -1,2 +1,10 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<h1>Editing <%= @category.name %></h1>
+
+<%= form_for @category do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit "Update Category" %>
+<% end %>
+
+<%= button_to "Delete", category_path(@category), method: :delete %>

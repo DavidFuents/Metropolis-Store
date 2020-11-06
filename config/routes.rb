@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'collections#index'
+  root :to => 'customer_sessions#index'
  
   namespace :admin do
     resources :users, only: [:new, :create]
@@ -9,8 +9,14 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     get 'logout', to: 'sessions#delete'
   end
-
-  resources :collections do 
-    resources :categories
+  
+  resources :collections, except: [:index] do 
+    resources :products, except: [:index]
   end
+  
+  resources :categories, except: [:index] do 
+    resources :products, only: [:show]
+  end  
+
+  get '/', to: 'customer_sessions#index'
 end

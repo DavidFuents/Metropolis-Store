@@ -29,6 +29,11 @@ class Admin::SessionsController < ApplicationController
   end
 
   def dashboard
+    if logged_in?
+      flash[:alert] = 'Logged in as'
+    end
+
     @collections = Collection.all
+    @categories = Category.all
   end
 end

@@ -6,5 +6,5 @@
 
     <%= f.submit "Update Collection" %>
 <% end %>
-
+<%= button_to "Add Product", new_collection_product_path(@collection) %>
 <%= button_to "Delete", collection_path(@collection), method: :delete %>
