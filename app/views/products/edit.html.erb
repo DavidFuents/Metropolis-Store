@@ -1,2 +1,13 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>Editing <%= @product.name %></h1>
+<%= form_for @product, url: collection_product_path(@product), method: :patch do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, value: f.object.name%>
+    
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+
+    <%= f.submit "Update Product" %>
+<% end %>

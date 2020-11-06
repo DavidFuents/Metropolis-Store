@@ -1,1 +1,7 @@
 <h1><%= @category.name %> Show page</h1>
+<ul>
+<% @category.products.each do |product| %>
+    <li><%= link_to product.name, category_product_path(@category, product.id) %></li>
+<% end %> 
+</ul>
+<%= link_to 'Go to home', root_path %>

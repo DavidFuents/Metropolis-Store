@@ -4,4 +4,4 @@ class Product < ApplicationRecord
     
     serialize :stock 
     validates_uniqueness_of :name
-end
+end 

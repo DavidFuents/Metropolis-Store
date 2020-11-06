@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.new(name: product_params[:name], price: product_params[:price], stock: product_params[:stock], collection_id: params[:collection_id], category_id: product_params[:category_id])
     if @product.valid?
       @product.save
-    redirect_to admin_dashboard_path
+      redirect_to admin_dashboard_path
     else  
       render :new
     end

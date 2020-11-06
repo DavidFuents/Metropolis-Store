@@ -1,12 +1,12 @@
-<%= form_for @product do |f|%>
+<%= form_for @product, url: collection_products_path(@product.collection_id) do |f|%>
   <%= f.label :name %>
   <%= f.text_field :name, value: f.object.name%>
   
   <%= f.label :price %>
-  <%= f.number_field :price, value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''), step: :any %>
-  
+  <%= f.number_field :price %>
+ 
   <%= f.label :category_id %>
-  <%= f.number_field :category_id %>
+  <%= f.collection_select :category_id, Category.all, :id, :name %>
 
   <%= f.submit %>
 <% end %>

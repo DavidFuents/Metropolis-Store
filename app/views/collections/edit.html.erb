@@ -6,5 +6,12 @@
 
     <%= f.submit "Update Collection" %>
 <% end %>
-<%= button_to "Add Product", new_collection_product_path(@collection) %>
-<%= button_to "Delete", collection_path(@collection), method: :delete %>
+<%= button_to "Delete Collection", collection_path(@collection), method: :delete %>
+
+<h2>Products</h2>
+<ul>
+<% @collection.products.each do |product| %>
+    <li><%= link_to product.name, edit_collection_product_path(@collection, product.id) %></li>
+<% end %>
+</ul>
+<%= link_to "Add Product", new_collection_product_path(@collection) %>

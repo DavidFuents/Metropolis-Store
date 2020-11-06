@@ -1,1 +1,7 @@
 <h1><%= @collection.name %></h1>
+<ul>
+<% @collection.products.each do |product| %>
+    <li><%= link_to product.name, collection_product_path(@collection, product.id) %></li>
+<% end %>
+</ul>
+<%= link_to "Go back to home", root_path%>

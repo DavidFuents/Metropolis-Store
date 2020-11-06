@@ -1,9 +1,9 @@
 <h1>Admin Only.</h1>
-<%#= form_for @admin_user do |f|%>
-  <%#= f.label :username%>
-  <%#= f.text_field :username%>
-  <%#= f.label :password%>
-  <%#= f.password_field :password%>
-  <%#= f.submit %>
-<%#end%>
+<% = form_for @admin_user do |f|%>
+  <%= f.label :username%>
+  <%= f.text_field :username%>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <%= f.submit %>
+<% end %>
 <button><%= link_to "login", admin_login_path %></button>

@@ -1,2 +1,7 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1><%= @product.name%></h1>
+<small>Product price: <%= @product.price%> </small><br>
+<%if params[:collection_id] %>
+    <%= link_to "Go back to collection", collection_path(@product.collection_id)%>
+<%elsif params[:category_id] %>
+    <%= link_to "Go back to #{@product.category.name}", category_path(@product.category_id)  %>
+<% end %>

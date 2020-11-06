@@ -10,6 +10,15 @@
   </head>
 
   <body>
+  
     <%= yield %>
+    
   </body>
+  <footer>
+    <%if logged_in? %>
+      <%= link_to 'Log out', admin_logout_path %>
+    <% else %>
+      <%= link_to 'Admin Login', admin_login_path %>
+    <% end %>
+  </footer>
 </html>

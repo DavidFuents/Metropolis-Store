@@ -2,7 +2,7 @@
 <% if flash[:alert] %>
     <div class="alert"><%= flash[:alert] %> <%= current_user.username %>.</div>
   <% end %>
-<%= link_to 'logout', admin_logout_path %>
+
 <h4>Edit Collections</h4>
 <ul>
 <% @collections.each do |collection| %>
